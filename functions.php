@@ -18,6 +18,7 @@
 		wp_enqueue_script( 'accordion.js', get_template_directory_uri() .'/assets/js/accordion.js', array(), '1.0', true);
 		wp_enqueue_script( 'scrollIntoV.js', get_template_directory_uri() .'/assets/js/scrollIntoV.js', array(), '1.0', true);
 		wp_enqueue_script( 'topMenuSlider.js', get_template_directory_uri() .'/assets/js/topMenuSlider.js', array(), '1.0', true);
+		wp_enqueue_script( 'bootstrap.js', get_template_directory_uri() .'/assets/js/bootstrap.js', array(), '1.0', true);
 	}
 
 	add_action( 'widgets_init', 'register_left_panel_widget' );

@@ -1,152 +1,326 @@
 <?php get_header(); ?>
 
-<section class="main">
-	
+<section class="home-page-intro-wrapper">
 	<div class="content-container">
-		
-		<div class="row">
-			<div class="col-lg-4 form-wrapper">
-				<form class="form new-event">
-					<div class="form-item">
-						<h4 class="form-title-subtitle">Дата проведения</h4>
-						<input class="form-item-input" name="date">
-					</div>
-					<fieldset class="form-item new-event-classes">
-						<h3 class="form-title">Класс</h3>
-						<h5 class="get-all" onclick="selectAll('new-event-classes-item')">Выбрать все</h5>
-						<div class="new-event-classes-item">
-							<input type="checkbox" id="class1" name="news-event-class">
-							<label for="class1">1 класс</label>
-						</div>
-						<div class="new-event-classes-item">
-							<input type="checkbox" id="class2" name="news-event-class">
-							<label for="class2">2 класс</label>
-						</div>
-						<div class="new-event-classes-item">
-							<input type="checkbox" id="class3" name="news-event-class">
-							<label for="class3">3 класс</label>
-						</div>
-						<div class="new-event-classes-item">
-							<input type="checkbox" id="class4" name="news-event-class">
-							<label for="class4">4 класс</label>
-						</div>
-						<div class="new-event-classes-item">
-							<input type="checkbox" id="class5" name="news-event-class">
-							<label for="class5">5 класс</label>
-						</div>
-						<div class="new-event-classes-item">
-							<input type="checkbox" id="class6" name="news-event-class">
-							<label for="class6">6 класс</label>
-						</div>
-						<div class="new-event-classes-item">
-							<input type="checkbox" id="class7" name="news-event-class">
-							<label for="class7">7 класс</label>
-						</div>
-						<div class="new-event-classes-item">
-							<input type="checkbox" id="class8" name="news-event-class">
-							<label for="class8">8 класс</label>
-						</div>
-						<div class="new-event-classes-item">
-							<input type="checkbox" id="class9" name="news-event-class">
-							<label for="class9">9 класс</label>
-						</div>
-						<div class="new-event-classes-item">
-							<input type="checkbox" id="class10" name="news-event-class">
-							<label for="class10">10 класс</label>
-						</div>
-						<div class="new-event-classes-item">
-							<input type="checkbox" id="class11" name="news-event-class">
-							<label for="class11">11 класс</label>
-						</div>
-					</fieldset>
-					<fieldset class="form-item new-event-type">
-						<h3 class="form-title">Вид мероприятия</h3>
-						<div class="new-event-type-item">
-							<input type="checkbox" id="type1" name="news-event-type">
-							<label for="type1">Олимпиада</label>
-						</div>
-						<div class="new-event-type-item">
-							<input type="checkbox" id="type2" name="news-event-type">
-							<label for="type2">Олимпиада</label>
-						</div>
-						<div class="new-event-type-item">
-							<input type="checkbox" id="type3" name="news-event-type">
-							<label for="type3">Олимпиада</label>
-						</div>
-						<div class="new-event-type-item">
-							<input type="checkbox" id="type4" name="news-event-type">
-							<label for="type4">Олимпиада</label>
-						</div>
-						<div class="new-event-type-item">
-							<input type="checkbox" id="type5" name="news-event-type">
-							<label for="type5">Олимпиада</label>
-						</div>
-						<div class="new-event-type-item">
-							<input type="checkbox" id="type6" name="news-event-type">
-							<label for="type6">Олимпиада</label>
-						</div>
-					</fieldset>
-					<div class="form-confirm">
-						<input class="btn btn-primary" type="submit" name="" value="Применить">
-					</div>
-				</form>
+		<div class="home-page-intro">
+			<div class="top-content">
+				<div class="greeting">
+					<h1 class="title">Добро пожаловать в КФУ!</h1>
+				</div>
+				<div class="buttons">
+					<button type="button" class="button">
+						<a href="https://abiturient.kpfu.ru/" class="intro-links" target="blank">Вход\Регистрация</a>
+					</button>
+					<button type="button" class="button">
+						<a href="https://admissions.kpfu.ru/priemnaa-komissia/grafik-provedenia-dnei-otkrytyh-dverei" class="intro-links" target="blank">Дни открытых дверей</a>
+					</button>
+					<button type="button" class="button">
+						<a href="https://kpfu.ru/buklet-priema/mobile/" class="intro-links" target="blank">Буклет приёма</a>
+					</button>
+				</div> 
 			</div>
-			<div class="col-auto col-lg-8 news">
-				<div class="news-item">
-					<div class="news-illustration">
-						<img src="https://admissions.kpfu.ru//sites/default/files/2020-01/SHG_kfu-%2841%29_3_4_0.jpg">
-					</div>
-					<div class="news-description">
-						<a href="#" class="news-title-link">
-							<h3 class="news-title">
-								<span class="news-event">День открытых дверей в ВШ ИТИС</span>
-								<span class="news-date">28.03.2020</span>
-							</h3>
-						</a>
-						<p class="news-event-description">Встреча с абитуриентами 9-11 классов и их родителями. Расскажем какие ЕГЭ нужно сдавать, как можно получить грант на обучение, какие предметы изучают студенты. Дата проведения: 28 марта 2020 года в 12.00, ул. Кремлевская, 35, 13 этаж, ауд. 1310-1311.
-								<span class="contacts">
-									Контакты: 
-									<span class="contacts-name">Ирина Максимова, </span> 
-									<a href="#" class="contacts-mail">
-										i_maksimova@it.kfu.ru
-									</a>
-									<span class="contacts-phone">, 8 (843) 221-34-33 (доб.12).</span>
-								</span>
-						</p>
-						<p class="classes">Классы: 9 класс, 10 класс, 11 класс</p>
-						<p class="date">Дата проведения: 28.03.2020 - 12:00</p>
-					</div>
-				</div> <!-- news-item -->
-				<div class="news-item">
-					<div class="news-illustration">
-						<img src="https://admissions.kpfu.ru//sites/default/files/2020-01/SHG_kfu-%2841%29_3_4_0.jpg">
-					</div>
-					<div class="news-description">
-						<a href="#" class="news-title-link">
-							<h3 class="news-title">
-								<span class="news-event">День открытых дверей в ВШ ИТИС</span>
-								<span class="news-date">28.03.2020</span>
-							</h3>
-						</a>
-						<p class="news-event-description">Встреча с абитуриентами 9-11 классов и их родителями. Расскажем какие ЕГЭ нужно сдавать, как можно получить грант на обучение, какие предметы изучают студенты. Дата проведения: 28 марта 2020 года в 12.00, ул. Кремлевская, 35, 13 этаж, ауд. 1310-1311.
-								<span class="contacts">
-									Контакты: 
-									<span class="contacts-name">Ирина Максимова, </span> 
-									<a href="#" class="contacts-mail">
-										i_maksimova@it.kfu.ru
-									</a>
-									<span class="contacts-phone">, 8 (843) 221-34-33 (доб.12).</span>
-								</span>
-						</p>
-						<p class="classes">Классы: 9 класс, 10 класс, 11 класс</p>
-						<p class="date">Дата проведения: 28.03.2020 - 12:00</p>
-					</div>
-				</div> <!-- news-item -->
+			<div class="bottom-content">
+				<h6>Узнать больше</h6>
+				<div class="icon-scroll">
+					<div class="scroller"></div>
+				</div>
 			</div>
 		</div>
-
 	</div>
 
 </section>
 
+<section class="university-admission-wrapper">
+	<div class="content-container">
+		<div class="university-admission">
+			<div class="block-slider faculty-slider">
+				<div id="carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+					<ol class="carousel-indicators">
+						<h5>Прием в университет</h5>
+						<li class="names-item" data-target="#carousel" data-slide-to="0" class="active">
+							Казань
+						</li>
+						<li class="names-item" data-target="#carousel" data-slide-to="1">
+							Набережные челны
+						</li>
+						<li class="names-item" data-target="#carousel" data-slide-to="2">
+							Елабуга
+						</li>
+					</ol>
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+						  	<h5 class="text-center mt-4 mb-4">Программы бакалавриата и специалитета(Казань)</h5>
+						  	<div class="subjects">
+								<button class="courusel-header" type="button" data-toggle="collapse" data-target="#collapse11" aria-expanded="false" aria-controls="collapseExample">
+								    Математика, Физика
+								</button>
+								<div class="collapse" id="collapse11">
+								    <div class="card card-body">
+								    	<div class="d-flex flex-wrap">
+									        <p class="collapse-item">
+									        	<a href="#">Физика</a>
+									        </p>
+									        <p class="collapse-item">
+									        	<a href="#">Физика</a>
+									        </p>
+									        <p class="collapse-item">
+									        	<a href="#">Физика</a>
+									        </p>
+									        <p class="collapse-item">
+									        	<a href="#">Физика</a>
+									        </p>
+									        <p class="collapse-item">
+									        	<a href="#">Физика</a>
+									        </p>
+									        <p class="collapse-item">
+									        	<a href="#">Физика</a>
+									        </p>
+									        <p class="collapse-item">
+									        	<a href="#">Физика</a>
+									        </p>
+								    	</div>
+								    </div>
+								</div>
+							</div>
+						  	<div class="subjects">
+								<button class="courusel-header" type="button" data-toggle="collapse" data-target="#collapse12" aria-expanded="false" aria-controls="collapseExample">
+								    Математика, Физика
+								</button>
+								<div class="collapse" id="collapse12">
+								    <div class="card card-body">
+								    	<div class="d-flex flex-wrap">
+									        <p class="collapse-item">
+									        	<a href="#">Физика</a>
+									        </p>
+									        <p class="collapse-item">
+									        	<a href="#">Физика</a>
+									        </p>
+									        <p class="collapse-item">
+									        	<a href="#">Физика</a>
+									        </p>
+									        <p class="collapse-item">
+									        	<a href="#">Физика</a>
+									        </p>
+									        <p class="collapse-item">
+									        	<a href="#">Физика</a>
+									        </p>
+									        <p class="collapse-item">
+									        	<a href="#">Физика</a>
+									        </p>
+									        <p class="collapse-item">
+									        	<a href="#">Физика</a>
+									        </p>
+								    	</div>
+								    </div>
+								</div>
+							</div>
+						</div>
+						<div class="carousel-item">
+						  	<h5 class="text-center mt-4 mb-4">Программы бакалавриата и специалитета(Челны)</h5>
+						  	<div class="subjects">
+								<button class="courusel-header" type="button" data-toggle="collapse" data-target="#collapse21" aria-expanded="false" aria-controls="collapseExample">
+								    Математика, Физика
+								</button>
+								<div class="collapse" id="collapse21">
+								    <div class="card card-body">
+								    	<div class="d-flex flex-wrap">
+									        <p class="collapse-item">
+									        	<a href="#">Физика</a>
+									        </p>
+									        <p class="collapse-item">
+									        	<a href="#">Физика</a>
+									        </p>
+									        <p class="collapse-item">
+									        	<a href="#">Физика</a>
+									        </p>
+									        <p class="collapse-item">
+									        	<a href="#">Физика</a>
+									        </p>
+									        <p class="collapse-item">
+									        	<a href="#">Физика</a>
+									        </p>
+									        <p class="collapse-item">
+									        	<a href="#">Физика</a>
+									        </p>
+									        <p class="collapse-item">
+									        	<a href="#">Физика</a>
+									        </p>
+								    	</div>
+								    </div>
+								</div>
+							</div>
+						  	<div class="subjects">
+								<button class="courusel-header" type="button" data-toggle="collapse" data-target="#collapse22" aria-expanded="false" aria-controls="collapseExample">
+								    Математика, Физика
+								</button>
+								<div class="collapse" id="collapse22">
+								    <div class="card card-body">
+								    	<div class="d-flex flex-wrap">
+									        <p class="collapse-item">
+									        	<a href="#">Физика</a>
+									        </p>
+									        <p class="collapse-item">
+									        	<a href="#">Физика</a>
+									        </p>
+									        <p class="collapse-item">
+									        	<a href="#">Физика</a>
+									        </p>
+									        <p class="collapse-item">
+									        	<a href="#">Физика</a>
+									        </p>
+									        <p class="collapse-item">
+									        	<a href="#">Физика</a>
+									        </p>
+									        <p class="collapse-item">
+									        	<a href="#">Физика</a>
+									        </p>
+									        <p class="collapse-item">
+									        	<a href="#">Физика</a>
+									        </p>
+								    	</div>
+								    </div>
+								</div>
+							</div>
+						</div>
+						<div class="carousel-item">
+						  	<h5 class="text-center mt-4 mb-4">Программы бакалавриата и специалитета(Елабуга)</h5>
+						  	<div class="subjects">
+								<button class="courusel-header" type="button" data-toggle="collapse" data-target="#collapse31" aria-expanded="false" aria-controls="collapseExample">
+								    Математика, Физика
+								</button>
+								<div class="collapse" id="collapse31">
+								    <div class="card card-body">
+								    	<div class="d-flex flex-wrap">
+									        <p class="collapse-item">
+									        	<a href="#">Физика</a>
+									        </p>
+									        <p class="collapse-item">
+									        	<a href="#">Физика</a>
+									        </p>
+									        <p class="collapse-item">
+									        	<a href="#">Физика</a>
+									        </p>
+									        <p class="collapse-item">
+									        	<a href="#">Физика</a>
+									        </p>
+									        <p class="collapse-item">
+									        	<a href="#">Физика</a>
+									        </p>
+									        <p class="collapse-item">
+									        	<a href="#">Физика</a>
+									        </p>
+									        <p class="collapse-item">
+									        	<a href="#">Физика</a>
+									        </p>
+								    	</div>
+								    </div>
+								</div>
+							</div>
+						  	<div class="subjects">
+								<button class="courusel-header" type="button" data-toggle="collapse" data-target="#collapse32" aria-expanded="false" aria-controls="collapseExample">
+								    Математика, Физика
+								</button>
+								<div class="collapse" id="collapse32">
+								    <div class="card card-body">
+								    	<div class="d-flex flex-wrap">
+									        <p class="collapse-item">
+									        	<a href="#">Физика</a>
+									        </p>
+									        <p class="collapse-item">
+									        	<a href="#">Физика</a>
+									        </p>
+									        <p class="collapse-item">
+									        	<a href="#">Физика</a>
+									        </p>
+									        <p class="collapse-item">
+									        	<a href="#">Физика</a>
+									        </p>
+									        <p class="collapse-item">
+									        	<a href="#">Физика</a>
+									        </p>
+									        <p class="collapse-item">
+									        	<a href="#">Физика</a>
+									        </p>
+									        <p class="collapse-item">
+									        	<a href="#">Физика</a>
+									        </p>
+								    	</div>
+								    </div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="home-page-registration">
+	<div class="content-container">
+
+		<div class="title">
+			<h2>хочешь быть с нами? Присоединяйся!</h2>
+		</div>
+		
+		<div class="row">
+			<div class="col-lg-6 form-wrapper">
+				<form class="form registration">
+					<div class="form-item">
+						<input class="form-item-input" name="surname" placeholder="Фамилия">
+					</div>
+					<div class="form-item">
+						<input class="form-item-input" name="city" placeholder="Город">
+					</div>
+					<div class="form-item">
+						<input class="form-item-input" name="name" placeholder="Имя">
+					</div>
+					<div class="form-item">
+						<input class="form-item-input" name="phone" placeholder="Телефон">
+					</div>
+					<div class="form-item">
+						<input class="form-item-input" name="patronymic" placeholder="Отчество">
+					</div>
+					<div class="form-item">
+						<input class="form-item-input" name="e-mail" placeholder="E-mail">
+					</div>
+					<div class="form-item">
+						<input class="form-item-input" name="birthDate" placeholder="Дата рождения(дд.мм.гггг)">
+					</div>
+					<div class="form-item">
+						<input class="form-item-input" name="pass" placeholder="Пароль">
+					</div>
+					<div class="form-item">
+						<input class="form-item-input" name="passRepeat" placeholder="Подтверждение пароля">
+					</div>
+					<div class="form-item">
+						<input type="checkbox" id="checkReg" name="checkReg">
+						<label for="checkReg">Согласен(на) на обработку своих персональных данных</label>
+					</div>
+					<div class="form-item form-confirm">
+						<input class="btn btn-primary" type="submit" name="lob-conf-submit" value="Зарегистрироваться">
+					</div>
+				</form>
+			</div>
+			<div class="col-lg-6 info">
+				<p class="text">
+				Вы уже решили, что хотите из разряда абитуриентов перейти в студенты? Тогда расслабьтесь и выдохните – первый и самый важный шаг вы уже сделали. А это, как говорится, уже половина пути. Осталось разобраться, как именно это сделать.
+				</p>
+
+				<p class="text">
+				Первым делом зарегистрируйтесь в социально-образовательной сети Казанского федерального университета «Буду студентом!»<a href="https://abiturient.kpfu.ru/" target="blank"> (abiturient.kpfu.ru)</a>.
+				</p>
+
+				<p class="text">
+				Благодаря аккаунту в нашей социальной сети вы сможете записаться на программы дистанционного обучения, посмотреть видео-уроки, пройти учебное тестирование в формате ЕГЭ, а также принять участие в олимпиадах, победы в которых могут принести вам дополнительные баллы для поступления.
+				</p>
+			</div>
+
+		</div>
+
+	</div>
+</section>
+
 <?php get_footer(); ?>
+
+</html>
