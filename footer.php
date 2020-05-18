@@ -35,9 +35,9 @@
 
 	<div class="footer-bottom">
 		<div class="content-container">
-			<div class="footer-menu-wrapper">
-				<ul class="nav footer-menu d-flex justify-content-center justify-content-lg-between align-items-center">
-					<div class="arrow-left" onclick="footerSlider('arrow-left')"></div>
+			<div class="footer-menu-wrapper d-flex justify-content-center align-items-center">
+				<div class="arrow-left" onclick="footerSlider('arrow-left')"></div>
+				<ul class="nav footer-menu d-flex justify-content-lg-center align-items-center text-center">
 					<li class="footer-menu-item active">
 						<a href="#" class="footer-menu-link">Интранет</a>
 					</li>
@@ -62,8 +62,8 @@
 					<li class="footer-menu-item">
 						<a href="https://admissions.kpfu.ru/blind/change/text" class="footer-menu-link">Версия для слабовидящих</a>
 					</li>
-					<div class="arrow-right" onclick="footerSlider('arrow-right')"></div>
 				</ul>
+				<div class="arrow-right" onclick="footerSlider('arrow-right')"></div>
 			</div>
 			<div class="copyright d-flex justify-content-center">
 				© Казанский федеральный университет, 2020
@@ -73,5 +73,8 @@
 </footer>
 
 <?php wp_footer(); ?>
+
+<script type="text/javascript" src="assets\js\Togler.js"></script>
+
 </body>
 </html>

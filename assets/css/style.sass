@@ -70,6 +70,11 @@ h1,h2,h3,h4,h5,h6
 .top-menu
 	padding: 15px 0
 
+	.top-menu-link
+		color: $main-color
+		@media(max-width: 330px)
+			font-size: 14px
+
 .left-side 
 	display: flex
 	justify-content: space-between
@@ -82,6 +87,9 @@ h1,h2,h3,h4,h5,h6
 
 	.home
 		font-size: 24px
+		@media(max-width: 380px)
+			font-size: 20px
+			padding: 0
 
 .header-line
 	.logo-wrapper
@@ -111,29 +119,75 @@ h1,h2,h3,h4,h5,h6
 	font-size: 16px
 
 .main-menu
-	padding: 0 100px 0 30px
+	padding: 0 50px 0 0
 	position: relative
+
+	.nav
+		justify-content: flex-start
 
 	@media(max-width: 767px)
 		padding: 0
+		display: flex
+		align-items: center
+
+		.nav
+			width: 210px
+			justify-content: center
+
+		.arrow-right, .arrow-left
+			display: block
+			border-color: $main-color
+
+		.arrow-right
+			margin-left: 0
+
+		.arrow-left
+			margin-right: 0
+
+		.arrow 
+			position: static
 
 	.nav 
 		flex-direction: row
 
 		.top-menu-item
+			padding: 0
 			@media(max-width: 767px)
 				display: none
 
-		.top-menu-item.active
-			@media(max-width: 767px)
+		@media(min-width: 768px)
+			.closed-top-menu-item
+				display: none
+				
+			.opened-top-menu-item
+				display: none
+	
+			.opened-top-menu-item.active
 				display: block
-		
+
+			.closed-top-menu-item.active
+				display: block
+
 		.top-menu-link
-			padding: 0 10px 7px 10px
 			border-bottom: 1px solid transparent
 
+		.top-menu-link:hover
+			border-bottom: 1px solid $main-color
+
+		.top-menu-link
+			padding: 0 7px 6px 7px
+
+		.opened-top-menu-item.active
 			@media(max-width: 767px)
-				padding: 0
+				display: block
+
+			@media(max-width: 767px)
+				padding: 0 10px
+				width: 100%
+				text-align: center
+				text-overflow: ellipsis
+				white-space: nowrap
+				overflow: hidden
 
 		.top-menu-link:hover
 			border-color: $main-color
@@ -146,6 +200,8 @@ h1,h2,h3,h4,h5,h6
 			border: 1px solid $main-color
 			transform: translateY(1px)
 			position: relative
+			z-index: 1010
+			margin-left: 20px
 
 			@media(max-width: 767px)
 				display: none
@@ -154,66 +210,76 @@ h1,h2,h3,h4,h5,h6
 				top: 50%
 				left: 50%
 				transform: translate3d(-50%,-50%,0) rotate(45deg)
+				transition: all 0.5s linear
 
-	.nav:before
-		color: $main-color
+	.closed-items.active .main-burger-menu .arrow
+		transform: translate3d(-50%,-50%,0) rotate(-495deg)
+
+	.closed-items.active .main-burger-menu:before
+		position: absolute
+		top: 53px
+
 		display: block
 		content: ''
-		width: 5px
-		height: 5px
-		border: solid black
-		border-width: 0 1px 1px 0
-		padding: 3px
-		position: absolute
-		top: 50%
-		left: -30px
-		transform: translate3d(0,-50%,0) rotate(135deg)
+		width: 20px
+		height: 20px
 
-	.nav:after
-		color: $main-color
-		display: block
-		content: ''
-		width: 5px
-		height: 5px
-		border: solid black
-		border-width: 0 1px 1px 0
-		padding: 3px
-		position: absolute
-		top: 50%
-		right: -30px
-		transform: translate3d(0,-50%,0) rotate(-45deg)
+		-moz-transform: translate3d(0,-50%,0) rotate(45deg)
+		-ms-transform: translate3d(0,-50%,0) rotate(45deg)
+		-webkit-transform: translate3d(0,-50%,0) rotate(45deg)
+		-o-transform: translate3d(0,-50%,0) rotate(45deg)
+		transform: translate3d(0,-50%,0) rotate(45deg)
 
+		-moz-box-shadow: -2px -2px 2px 0px rgba(88, 71, 71, 0.25)
+		-webkit-box-shadow: -2px -2px 2px 0px rgba(88, 71, 71, 0.25)
+		box-shadow: -2px -2px 2px 0px rgba(88, 71, 71, 0.25)
+		background-color: white
 
 	.closed-items
 		position: relative
 
 		.closed-items-nav
 			max-height:0px
-			width: 160px
 			overflow: hidden
 			transition: all 0.5s linear
 
 			background-color: #fff
-			border: 0px solid $main-color
 
 			position: absolute
 			left: -130px
+			top: 55px
+
+			.top-menu-item
+				margin: 0
 
 			.top-menu-link
-				padding: 0
+				padding: 5px 0 5px 8px
 				border: 0
+				width: 200px
+				display: block
+
+			.top-menu-link:hover
+				text-decoration: underline
 
 			.top-menu-item
 				padding: 5px 0 5px 8px
 				width: 100%
+			.top-menu-item:not(:last-child)
 				border-bottom: 1px solid $main-color
 
-		.closed-items-nav.active
-			border: 1px solid $main-color
-			max-height: 200px
+	.closed-items.active 
+		.closed-items-nav
+			max-height: 500px
 
 .closed-items-nav
 	z-index: 1000
+	width: 200px
+	-moz-box-shadow: 0px 0px 5px 0px #584747
+	-webkit-box-shadow: 0px 0px 5px 0px #584747
+	box-shadow: 0px 0px 5px 0px #584747
+	-webkit-border-radius: 3px
+	-moz-border-radius: 3px
+	border-radius: 3px
 
 .arrow
 	border: solid $main-color
@@ -223,26 +289,90 @@ h1,h2,h3,h4,h5,h6
 
 	position: absolute
 
+@keyframes langBox 
+	10%
+		top: 70px
+	20%
+		top: 40px
+	30%
+		top: 10px
+	40%
+		top: -20px
+	50%
+		top: 10px
+	60%
+		top: 40px
+	70%
+		top: 70px
+	80%
+		top: 40px
+	90%
+		top: 10px
+	100%
+		top: 40px
+
+.language.active
+	.choose-lang-button
+		.arrow
+			transform: translate3d(-50%,-50%,0) rotate(-135deg)
+
+.language
+	@media(max-width: 330px)
+		padding-left: 0
+
 .language 
 	position: relative
 
-	.choose-lang
-		position: absolute
-		right: 0
+	.choose-lang-item.active
+		.lang
+			color: #007bff
 
-		width: 150px
-		max-height: 0px
-		overflow: hidden
-		transition: all 0.5s linear
-		background-color: #fff
+	@media(min-width: 758px)
 
-		.choose-lang-item
-			display: flex
-			justify-content: space-between
+		.choose-lang
+			position: absolute
+			top: -500px
+			right: 7px
 
-	.choose-lang.active
-		max-height: 300px
-	
+			width: 200px
+			height: auto
+			overflow: hidden
+			transition: max-height 0.5s linear
+			background-color: #fff
+
+			-moz-box-shadow: 0px 0px 5px 0px #584747
+			-webkit-box-shadow: 0px 0px 5px 0px #584747
+			box-shadow: 0px 0px 5px 0px #584747
+			-webkit-border-radius: 3px
+			-moz-border-radius: 3px
+			border-radius: 3px
+			z-index: 2500
+
+			.choose-lang-item
+				padding: 10px 20px
+				display: flex
+				justify-content: space-between
+
+				img
+					position: absolute
+					right: 18px
+					width: 25px
+					height: auto
+					display: inline-block
+				a 
+					width: 100%
+					color: $main-color
+				a:hover
+					color: #007bff
+
+			.choose-lang-item:first-child
+				padding-top: 20px
+			.choose-lang-item:last-child
+				padding-bottom: 20px
+
+		.choose-lang.active
+			animation: .5s linear 1 forwards langBox
+		
 	.choose-lang-button
 		position: relative
 		top: 50%
@@ -264,6 +394,139 @@ h1,h2,h3,h4,h5,h6
 			display: block
 			width: 22px
 			height: auto
+			@media(max-width: 380px)
+				width: 20px
+
+	.closer
+		display: none
+	.choose-lang-text.choose-lang-item
+		display: none
+
+	@media(max-width: 757px)
+		.choose-lang-text.choose-lang-item
+			padding: 22px 1em 1em 1em
+			font-size: 16px
+			line-height: 16px
+			font-weight: bold
+			color: #999
+			text-align: center
+
+		.choose-lang
+			display: none
+			position: fixed
+			top: 0
+			right: 0
+			bottom: 0
+			left: 0
+			background: #fff
+			opacity: 0
+			-webkit-transition: opacity 200ms ease-in
+			-moz-transition: opacity 200ms ease-in
+			transition: opacity 200ms ease-in
+			pointer-events: none
+			margin: 0
+			padding: 0
+			z-index: 3000
+
+		.choose-lang.active
+			display: block
+			opacity: 0.9
+			pointer-events: auto
+			overflow: hidden
+
+		.choose-lang-wrap
+			position: absolute
+			top: calc(50% + 35px)
+			left: 50%
+			transform: translate3d(-50%,-50%,0)
+			width: 80%
+			height: 80%
+			margin: 0 auto
+			overflow-y: auto
+			overflow-x: hidden
+
+		.choose-lang-wrap::-webkit-scrollbar 
+				width: 6px
+		.choose-lang-wrap::-webkit-scrollbar-thumb 
+				background-color: $main-color 
+				border-radius: 5px
+
+		.choose-lang-item
+			width: 100%
+			margin: 0 auto
+			padding: 10px 20px
+			display: flex
+			align-items: center
+			justify-content: center
+
+			line-height: 24px
+			font-size: 24px
+			font-weight: bold
+
+			a 
+				text-align: center
+				width: 100%
+				color: $main-color
+			a:hover
+				color: #007bff
+
+			img
+				padding-left: 10px
+				width: 30px
+				height: auto
+
+		.choose-lang-item:first-child
+			padding: 0
+
+		.choose-lang-item.active
+			a
+				color: #007bff
+
+		.closer
+			width: 32px
+			display: block
+			position: fixed
+			top: 10%
+			right: 33px
+
+			.closer-btn
+
+				span
+					font-size: 0
+					background-color: $main-color
+
+					display: block
+					height: 0px
+					width: 40px
+
+					position: absolute
+					top: 50%
+					transform: translate3d(0,-50%,0)
+
+				span:before
+					content: ''
+					display: block
+					height: 3px
+					width: 20px
+
+					background-color: $main-color
+
+					position: absolute
+					top: 0px
+					transform: rotate(45deg)
+
+
+				span:after
+					content: ''
+					display: block
+					height: 3px
+					width: 20px
+
+					background-color: $main-color
+
+					position: absolute
+					top: 0px
+					transform: rotate(-45deg)
 
 .right-side 
 	// margin-left: 130px
@@ -274,12 +537,14 @@ h1,h2,h3,h4,h5,h6
 		padding: 0 15px
 		i
 			color: $main-color
+		@media(max-width: 380px)
+			padding: 0 8px
+			font-size: 20px
 
 	.actions-item:last-child
 		padding-right: 0
 
 .header-line
-	padding: 10px 0
 	background-color: $main-color
 	color: #fff
 
@@ -295,8 +560,7 @@ h1,h2,h3,h4,h5,h6
 		@media(max-width: 991px)
 			display: none
 
-	.nav-toggle 
-		cursor: pointer
+	.nav-toggle
 		display: none
 		position: relative
 		@media(max-width: 991px)
@@ -362,10 +626,14 @@ h1,h2,h3,h4,h5,h6
 			font-size: 14px
 			text-decoration: none
 			color: #fefefe
+			padding: 6px 0
 	.admissions-nav-item:hover
 		background-color: #fff
 		.admissions-nav-link
 			color: #07d
+
+.hidden-content
+	list-style-type: none
 
 @media(min-width: 992px)
 	.admissions-nav-item:hover
@@ -407,10 +675,13 @@ h1,h2,h3,h4,h5,h6
 					line-height: 20px
 					color: $main-color
 
-				.hidden-content-item
-					padding-top: 5px
-					padding-bottom: 5px
-					padding-right: 30px
+				.hidden-content-item 
+					padding: 0
+
+					.hidden-content-link 
+						width: 100%
+						display: block
+						padding: 5px 15px
 
 				.hidden-content-item:hover
 					background-color: rgba(1, 42, 119, 0.5)
@@ -453,7 +724,7 @@ h1,h2,h3,h4,h5,h6
 	.admissions-nav-wrapper
 		background-color: #fff
 		padding: 15px 0 40px 0
-		z-index: 1000
+		z-index: 2000
 
 		.content-container
 			margin: 0
@@ -511,18 +782,18 @@ h1,h2,h3,h4,h5,h6
 			background-color: white
 
 		.close-menu
-			cursor: pointer
 			font-size: 0
 			background-color: transparent
 
 			display: block
-			height: 40px
+			height: 3px
 			width: 40px
+			padding-left: 20px
 
 			position: absolute
 			top: 50%
 			right: 40px
-			transform: translate3d(20px,-50%,0)
+			transform: translate3d(0,-50%,0)
 
 		.close-menu:before
 			content: ''
@@ -565,15 +836,18 @@ h1,h2,h3,h4,h5,h6
 				display: block
 
 	.admissions-nav-item 
-
 		.hidden-content
 			display: none
 
 		.hidden-content-list 
 			padding: 10px 0
+			width: 100%
+
 			.nav
 				display: none
 				padding-left: 15px
+				padding-right: 20px
+
 				.hidden-content-item
 					padding-left: 0
 					padding-right: 0
@@ -636,7 +910,6 @@ h1,h2,h3,h4,h5,h6
 				padding-left: 30px
 				padding-top: 10px
 				padding-bottom: 10px
-				cursor: pointer
 				position: relative
 
 			.second-step-link .title
@@ -756,30 +1029,16 @@ h1,h2,h3,h4,h5,h6
 		margin-bottom: 25px
 
 	input[type=checkbox]
-		display: none
+		box-shadow: 0 4px 4px rgba(0, 0, 0, 0.07) inset
+		border-radius: 3px
 
 	label
 		font-size: 17px
 		line-height: 1.5
 		color: #012a77
-		padding-left: 16px
 
-	label:before
-		display: inline-block
-		content: ''
-		width: 16px
-		height: 16px
-		border: 1px solid $main-color
-		box-shadow: 0 4px 4px rgba(0, 0, 0, 0.07) inset
-		border-radius: 3px
-		vertical-align: middle
-		margin: -3px 10px 0 -10px
-
-	input[type=checkbox]:checked + label:before
-		background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBoZWlnaHQ9IjUxMnB4IiB2aWV3Qm94PSIwIC00NiA0MTcuODEzMzMgNDE3IiB3aWR0aD0iNTEycHgiPjxwYXRoIGQ9Im0xNTkuOTg4MjgxIDMxOC41ODIwMzFjLTMuOTg4MjgxIDQuMDExNzE5LTkuNDI5Njg3IDYuMjUtMTUuMDgyMDMxIDYuMjVzLTExLjA5Mzc1LTIuMjM4MjgxLTE1LjA4MjAzMS02LjI1bC0xMjAuNDQ5MjE5LTEyMC40Njg3NWMtMTIuNS0xMi41LTEyLjUtMzIuNzY5NTMxIDAtNDUuMjQ2MDkzbDE1LjA4MjAzMS0xNS4wODU5MzhjMTIuNTAzOTA3LTEyLjUgMzIuNzUtMTIuNSA0NS4yNSAwbDc1LjE5OTIxOSA3NS4yMDMxMjUgMjAzLjE5OTIxOS0yMDMuMjAzMTI1YzEyLjUwMzkwNi0xMi41IDMyLjc2OTUzMS0xMi41IDQ1LjI1IDBsMTUuMDgyMDMxIDE1LjA4NTkzOGMxMi41IDEyLjUgMTIuNSAzMi43NjU2MjQgMCA0NS4yNDYwOTN6bTAgMCIgZmlsbD0iIzIxOTZmMyIvPjwvc3ZnPgo)
-		background-size: 100%
-		max-width: 256px
-		max-height: 256px
+	textarea
+		outline: none
 
 	.form-title-subtitle
 		font-weight: 300
@@ -896,6 +1155,9 @@ h1,h2,h3,h4,h5,h6
 	.footer-menu-wrapper
 		padding: 20px 0 20px 0
 
+	.footer-menu-item
+		padding: 0 20px
+
 	.footer-menu-link
 		font-size: 14px
 		color: #e0e0e0
@@ -916,9 +1178,31 @@ h1,h2,h3,h4,h5,h6
 .arrow-right,.arrow-left
 	display: none
 
+.arrow-left,.arrow-right
+	width: 3px
+	height: 3px
+	border: solid #e0e0e0
+	border-width: 0 1px 1px 0
+	padding: 3px
+
+.arrow-right
+	transform: rotate(-45deg)
+
+.arrow-left
+	transform: rotate(135deg)
+
 @media(max-width: 992px)
+	.footer-menu
+		width: 210px
+
 	.footer-menu-item
 		display: none
+		width: 100%
+		padding: 0 10px
+		text-align: center
+		text-overflow: ellipsis
+		white-space: nowrap
+		overflow: hidden
 
 	.footer-menu-item.active
 		display: block
@@ -928,20 +1212,7 @@ h1,h2,h3,h4,h5,h6
 			position: relative
 
 		.arrow-left,.arrow-right
-			width: 3px
-			height: 3px
-			border: solid #e0e0e0
-			border-width: 0 1px 1px 0
 			display: inline-block
-			padding: 3px
-
-		.arrow-right
-			margin-left: 60px
-			transform: rotate(-45deg)
-
-		.arrow-left
-			margin-right: 60px
-			transform: rotate(135deg)
 
 
 .menu-fixed.active
@@ -954,9 +1225,9 @@ h1,h2,h3,h4,h5,h6
 	.admissions-nav-item:hover .admissions-nav-link.first-step-link
 		color: #07d
 
-	@media(max-width: 991px)
-		.admissions-nav-item:hover .admissions-nav-link.first-step-link
-			color: #000
+@media(max-width:991px)
+	.header-line
+		padding: 10px 0
 
 .menu-fixed.active
 	width: 100%
@@ -967,6 +1238,7 @@ h1,h2,h3,h4,h5,h6
 	@media(max-width:991px)
 		.header-line
 			width: 100%
+			padding: 10px 0
 
 	.fixed-content-container
 		max-width: none
@@ -1083,3 +1355,6 @@ h1,h2,h3,h4,h5,h6
 .uchebnye-posobia-content
 	h4
 		line-height: 27px
+
+.home-page-intro-wrapper
+	background-image: url("https://admissions.kpfu.ru/themes/inno/images/banner.jpg")
