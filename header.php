@@ -8,7 +8,7 @@
 
 	<script src="https://kit.fontawesome.com/b842fc6cc1.js"></script>
 
-	<title>Olimpiady</title>
+	<title>Admissions KPFU</title>
 	<?php wp_head();  ?>
 </head>
 <body>
@@ -27,7 +27,7 @@
 				<div class="row align-items-center justify-content-center">
 					<div class="col-auto col-md main-menu">
 						<div class="arrow arrow-left" onclick="topMenuSlider('arrow-left')"></div>
-						<ul class="nav navbar-nav main-menu-wrapper">
+						<ul class="nav navbar-nav main-menu-wrapper d-flex align-items-center">
 							<li class="top-menu-item opened-top-menu-item active">
 								<a href="https://rector.kpfu.ru/" class="top-menu-link">Сайт ректора</a>
 							</li>

@@ -1,4 +1,9 @@
 window.onload = function() {
+	let universityAdmissionCarousel = document.querySelector('.university-admission-wrapper').querySelector('.carousel-item');
+	let universityAdmissionIndicators = document.querySelector('.university-admission-wrapper').querySelector('.names-item');
+	universityAdmissionCarousel.classList.add('active');
+	universityAdmissionIndicators.classList.add('active');
+
 	if(screen.width >= 992){
 		hiddenContentHeight();
 		menuOffsetLeftShift();

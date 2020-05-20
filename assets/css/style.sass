@@ -86,7 +86,7 @@ h1,h2,h3,h4,h5,h6
 		padding-left: 0
 
 	.home
-		font-size: 24px
+		font-size: 21px
 		@media(max-width: 380px)
 			font-size: 20px
 			padding: 0
@@ -95,11 +95,11 @@ h1,h2,h3,h4,h5,h6
 	.logo-wrapper
 		position: relative
 		overflow: hidden
-		height: 40px
+		height: 35px
 		.logo
 			display: block
 			position: absolute
-			height: 40px
+			height: 35px
 			top: 50%
 			transform: translateY(-50%)
 
@@ -116,7 +116,7 @@ h1,h2,h3,h4,h5,h6
 
 .top-menu-link
 	color: $main-color
-	font-size: 16px
+	font-size: 13px
 
 .main-menu
 	padding: 0 50px 0 0
@@ -533,7 +533,7 @@ h1,h2,h3,h4,h5,h6
 
 .actions
 	.actions-item
-		font-size: 24px
+		font-size: 21px
 		padding: 0 15px
 		i
 			color: $main-color
@@ -554,7 +554,6 @@ h1,h2,h3,h4,h5,h6
 
 	.text-right h3
 		font-size: 17px
-		line-height: 60px
 
 	.text-right
 		@media(max-width: 991px)
@@ -616,17 +615,15 @@ h1,h2,h3,h4,h5,h6
 			display: none
 	
 	.admissions-nav-item
-		padding: 0 10px
 
 		.admissions-nav-link
 			cursor: pointer
 			text-transform: uppercase
 			display: inline-block
-			line-height: 45px
 			font-size: 14px
 			text-decoration: none
 			color: #fefefe
-			padding: 6px 0
+			padding: 9px 10px
 	.admissions-nav-item:hover
 		background-color: #fff
 		.admissions-nav-link
@@ -646,6 +643,8 @@ h1,h2,h3,h4,h5,h6
 
 	.nav-offset-left
 		position: relative
+		margin-left: -70px
+		padding: 0 70px
 
 	.admissions-nav-item
 		position: relative
@@ -786,13 +785,12 @@ h1,h2,h3,h4,h5,h6
 			background-color: transparent
 
 			display: block
-			height: 3px
+			height: 40px
 			width: 40px
-			padding-left: 20px
 
 			position: absolute
 			top: 50%
-			right: 40px
+			right: 20px
 			transform: translate3d(0,-50%,0)
 
 		.close-menu:before
@@ -1222,18 +1220,25 @@ h1,h2,h3,h4,h5,h6
 	flex-wrap: no-wrap
 	background-color: #012a77
 
+	@media(max-width: 991px)
 	.admissions-nav-item:hover .admissions-nav-link.first-step-link
 		color: #07d
 
-@media(max-width:991px)
-	.header-line
-		padding: 10px 0
+.header-line
+	padding: 10px 0
 
 .menu-fixed.active
 	width: 100%
 	position: fixed
 	top: 0
 	z-index: 1050
+
+	.navbar-nav.nav.main-menu-wrapper
+		margin-left: -70px
+		padding: 0 70px
+
+	.admissions-nav-link
+		padding: 15px 10px
 
 	@media(max-width:991px)
 		.header-line
@@ -1358,7 +1363,6 @@ h1,h2,h3,h4,h5,h6
 
 .home-page-intro-wrapper
 	font-family: $font
-	background-image: url("assets/img/banner.png")
 	background-size: cover
 	background-repeat: no-repeat
 
@@ -1399,21 +1403,14 @@ h1,h2,h3,h4,h5,h6
 				max-width: 310px
 				padding: 0
 				margin-top: 30px
-				padding: 8px 50px
-				background-color: #012a77
-				border-radius: 5px
-				border: 0
 				outline: none
 
-				@media(max-width: 350px)
-					padding: 8px 25px
-
 			.button:hover
-				.intro-links
-					text-decoration: underline
+				.cfs-hyperlink
+					span
+						border-bottom: 1px solid #fff
 
-			.intro-links
-				color: #fff
+			.cfs-hyperlink
 				text-decoration: none
 				cursor: pointer
 				font-size: 17px
@@ -1422,6 +1419,17 @@ h1,h2,h3,h4,h5,h6
 				text-overflow: ellipsis
 				white-space: nowrap
 				overflow: hidden
+				padding: 8px 50px
+				background-color: #012a77
+				border-radius: 5px
+				border: 0
+				span
+					color: #fff
+					padding: 0 7px 0 7px
+					border-bottom: 1px solid transparent
+
+				@media(max-width: 350px)
+					padding: 8px 25px
 
 	.bottom-content
 		margin-top: 100px
@@ -1467,11 +1475,18 @@ h1,h2,h3,h4,h5,h6
 				border-radius: 50%
 
 .university-admission-wrapper
+	.active.carousel-item-right, .carousel-item-next:not(.carousel-item-left)
+		-webkit-transform: translateX(300%)
+		transform: translateX(300%)
+	.active.carousel-item-left, .carousel-item-prev:not(.carousel-item-right)
+		-webkit-transform: translateX(-300%)
+		transform: translateX(-300%)
+
 	.carousel-indicators 
 		position: static
 		z-index: 15
 		display: -ms-flexbox
-		display: flex
+		display: inline-flex
 		-ms-flex-pack: center
 		justify-content: start
 		padding-left: 0
@@ -1527,23 +1542,20 @@ h1,h2,h3,h4,h5,h6
 
 .university-admission-wrapper
 	font-family: $font
-	padding: 50px 0
+	padding-top: 50px
 	.university-admission
 		h5
 			font-size: 24px
 			font-weight: bold
 			line-height: 24px
-		.block-names
-			.names
-				display: inline
-				list-style-type: none
-				padding: 0
-			.names-item
-				display: inline-block
-				margin-left: 25px
-				color: black
-				font-size: 17px
-				cursor: pointer
+			display: inline-block
+
+		.carousel-item
+			h5
+				display: block
+		
+		.names-item
+			border-bottom: 2px solid transparent
 
 		.subjects
 			margin-bottom: 15px
@@ -1554,19 +1566,29 @@ h1,h2,h3,h4,h5,h6
 				color: black
 				font-size: 17px
 
-		@media(max-width: 575px)
+		@media(max-width: 680px)
 			.carousel-indicators
 				display: flex
 				flex-direction: column
 				align-items: center
-				h5
-					text-align: center
+				li
+					margin-bottom: 5px
+			h5
+				margin-bottom: 5px
+				display: block
+				text-align: center
 			.names-item
 				margin: 5px 0
 
+		.names-item.active
+			border-bottom: 2px solid $main-color
+
 .home-page-registration
 	font-family: $font
-	padding-bottom: 100px
+	padding: 50px 0 100px 0
+
+	span.wpcf7-list-item
+		margin: 0
 
 	.title
 		padding: 0 0 70px 0
@@ -1587,19 +1609,25 @@ h1,h2,h3,h4,h5,h6
 				line-height: 32px
 
 	.form-wrapper
-		border-right: 1px dashed $main-color
+		width: 100%
 		@media(min-width: 992px)
 			padding-right: 40px
+		select
+			box-shadow: none
+			outline: none
+			font-family: $font
+			font-style: italic
+			-webkit-appearance: none
+			-moz-appearance: none
+			appearance: none
+		select:hover,select:active,select:focus
+			background-color: #fff
 
 	@media(max-width: 991px)
 		.form-wrapper
 			display: block
 			border: 0
 			margin-bottom: 40px
-
-	.form.registration
-		border: 0
-		padding: 0
 
 	.form-item label
 		font-size: 17px
@@ -1641,6 +1669,7 @@ h1,h2,h3,h4,h5,h6
 
 	.info
 		@media(min-width: 992px)
+			border-left: 1px dashed $main-color
 			padding-left: 40px
 		a
 			display: inline-block

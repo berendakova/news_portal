@@ -101,7 +101,7 @@ h1, h2, h3, h4, h5, h6 {
   padding-left: 0;
 }
 .left-side .home {
-  font-size: 24px;
+  font-size: 21px;
 }
 @media (max-width: 380px) {
   .left-side .home {
@@ -113,12 +113,12 @@ h1, h2, h3, h4, h5, h6 {
 .header-line .logo-wrapper {
   position: relative;
   overflow: hidden;
-  height: 40px;
+  height: 35px;
 }
 .header-line .logo-wrapper .logo {
   display: block;
   position: absolute;
-  height: 40px;
+  height: 35px;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -138,7 +138,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .top-menu-link {
   color: #012a77;
-  font-size: 16px;
+  font-size: 13px;
 }
 
 .main-menu {
@@ -567,7 +567,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .actions .actions-item {
-  font-size: 24px;
+  font-size: 21px;
   padding: 0 15px;
 }
 .actions .actions-item i {
@@ -593,7 +593,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 .header-line .text-right h3 {
   font-size: 17px;
-  line-height: 60px;
 }
 @media (max-width: 991px) {
   .header-line .text-right {
@@ -649,18 +648,14 @@ h1, h2, h3, h4, h5, h6 {
 .admissions-nav-wrapper .admissions-nav .social-links {
   display: none;
 }
-.admissions-nav-wrapper .admissions-nav-item {
-  padding: 0 10px;
-}
 .admissions-nav-wrapper .admissions-nav-item .admissions-nav-link {
   cursor: pointer;
   text-transform: uppercase;
   display: inline-block;
-  line-height: 45px;
   font-size: 14px;
   text-decoration: none;
   color: #fefefe;
-  padding: 6px 0;
+  padding: 9px 10px;
 }
 .admissions-nav-wrapper .admissions-nav-item:hover {
   background-color: #fff;
@@ -685,6 +680,8 @@ h1, h2, h3, h4, h5, h6 {
 
   .nav-offset-left {
     position: relative;
+    margin-left: -70px;
+    padding: 0 70px;
   }
 
   .admissions-nav-item {
@@ -825,12 +822,11 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 0;
     background-color: transparent;
     display: block;
-    height: 3px;
+    height: 40px;
     width: 40px;
-    padding-left: 20px;
     position: absolute;
     top: 50%;
-    right: 40px;
+    right: 20px;
     transform: translate3d(0, -50%, 0);
   }
   .search .close-menu:before {
@@ -1275,16 +1271,22 @@ h1, h2, h3, h4, h5, h6 {
   color: #07d;
 }
 
-@media (max-width: 991px) {
-  .header-line {
-    padding: 10px 0;
-  }
+.header-line {
+  padding: 10px 0;
 }
+
 .menu-fixed.active {
   width: 100%;
   position: fixed;
   top: 0;
   z-index: 1050;
+}
+.menu-fixed.active .navbar-nav.nav.main-menu-wrapper {
+  margin-left: -70px;
+  padding: 0 70px;
+}
+.menu-fixed.active .admissions-nav-link {
+  padding: 15px 10px;
 }
 @media (max-width: 991px) {
   .menu-fixed.active .header-line {
@@ -1374,7 +1376,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .home-page-intro-wrapper {
   font-family: "Exo 2";
-  background-image: url("assets/img/banner.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -1421,22 +1422,12 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 310px;
   padding: 0;
   margin-top: 30px;
-  padding: 8px 50px;
-  background-color: #012a77;
-  border-radius: 5px;
-  border: 0;
   outline: none;
 }
-@media (max-width: 350px) {
-  .home-page-intro-wrapper .top-content .buttons .button {
-    padding: 8px 25px;
-  }
+.home-page-intro-wrapper .top-content .buttons .button:hover .cfs-hyperlink span {
+  border-bottom: 1px solid #fff;
 }
-.home-page-intro-wrapper .top-content .buttons .button:hover .intro-links {
-  text-decoration: underline;
-}
-.home-page-intro-wrapper .top-content .buttons .intro-links {
-  color: #fff;
+.home-page-intro-wrapper .top-content .buttons .cfs-hyperlink {
   text-decoration: none;
   cursor: pointer;
   font-size: 17px;
@@ -1445,6 +1436,20 @@ h1, h2, h3, h4, h5, h6 {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  padding: 8px 50px;
+  background-color: #012a77;
+  border-radius: 5px;
+  border: 0;
+}
+.home-page-intro-wrapper .top-content .buttons .cfs-hyperlink span {
+  color: #fff;
+  padding: 0 7px 0 7px;
+  border-bottom: 1px solid transparent;
+}
+@media (max-width: 350px) {
+  .home-page-intro-wrapper .top-content .buttons .cfs-hyperlink {
+    padding: 8px 25px;
+  }
 }
 .home-page-intro-wrapper .bottom-content {
   margin-top: 100px;
@@ -1488,11 +1493,19 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 50%;
 }
 
+.university-admission-wrapper .active.carousel-item-right, .university-admission-wrapper .carousel-item-next:not(.carousel-item-left) {
+  -webkit-transform: translateX(300%);
+  transform: translateX(300%);
+}
+.university-admission-wrapper .active.carousel-item-left, .university-admission-wrapper .carousel-item-prev:not(.carousel-item-right) {
+  -webkit-transform: translateX(-300%);
+  transform: translateX(-300%);
+}
 .university-admission-wrapper .carousel-indicators {
   position: static;
   z-index: 15;
   display: -ms-flexbox;
-  display: flex;
+  display: inline-flex;
   -ms-flex-pack: center;
   justify-content: start;
   padding-left: 0;
@@ -1549,24 +1562,19 @@ h1, h2, h3, h4, h5, h6 {
 
 .university-admission-wrapper {
   font-family: "Exo 2";
-  padding: 50px 0;
+  padding-top: 50px;
 }
 .university-admission-wrapper .university-admission h5 {
   font-size: 24px;
   font-weight: bold;
   line-height: 24px;
-}
-.university-admission-wrapper .university-admission .block-names .names {
-  display: inline;
-  list-style-type: none;
-  padding: 0;
-}
-.university-admission-wrapper .university-admission .block-names .names-item {
   display: inline-block;
-  margin-left: 25px;
-  color: black;
-  font-size: 17px;
-  cursor: pointer;
+}
+.university-admission-wrapper .university-admission .carousel-item h5 {
+  display: block;
+}
+.university-admission-wrapper .university-admission .names-item {
+  border-bottom: 2px solid transparent;
 }
 .university-admission-wrapper .university-admission .subjects {
   margin-bottom: 15px;
@@ -1578,23 +1586,34 @@ h1, h2, h3, h4, h5, h6 {
   color: black;
   font-size: 17px;
 }
-@media (max-width: 575px) {
+@media (max-width: 680px) {
   .university-admission-wrapper .university-admission .carousel-indicators {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  .university-admission-wrapper .university-admission .carousel-indicators h5 {
+  .university-admission-wrapper .university-admission .carousel-indicators li {
+    margin-bottom: 5px;
+  }
+  .university-admission-wrapper .university-admission h5 {
+    margin-bottom: 5px;
+    display: block;
     text-align: center;
   }
   .university-admission-wrapper .university-admission .names-item {
     margin: 5px 0;
   }
 }
+.university-admission-wrapper .university-admission .names-item.active {
+  border-bottom: 2px solid #012a77;
+}
 
 .home-page-registration {
   font-family: "Exo 2";
-  padding-bottom: 100px;
+  padding: 50px 0 100px 0;
+}
+.home-page-registration span.wpcf7-list-item {
+  margin: 0;
 }
 .home-page-registration .title {
   padding: 0 0 70px 0;
@@ -1621,12 +1640,24 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 .home-page-registration .form-wrapper {
-  border-right: 1px dashed #012a77;
+  width: 100%;
 }
 @media (min-width: 992px) {
   .home-page-registration .form-wrapper {
     padding-right: 40px;
   }
+}
+.home-page-registration .form-wrapper select {
+  box-shadow: none;
+  outline: none;
+  font-family: "Exo 2";
+  font-style: italic;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.home-page-registration .form-wrapper select:hover, .home-page-registration .form-wrapper select:active, .home-page-registration .form-wrapper select:focus {
+  background-color: #fff;
 }
 @media (max-width: 991px) {
   .home-page-registration .form-wrapper {
@@ -1634,10 +1665,6 @@ h1, h2, h3, h4, h5, h6 {
     border: 0;
     margin-bottom: 40px;
   }
-}
-.home-page-registration .form.registration {
-  border: 0;
-  padding: 0;
 }
 .home-page-registration .form-item label {
   font-size: 17px;
@@ -1679,6 +1706,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media (min-width: 992px) {
   .home-page-registration .info {
+    border-left: 1px dashed #012a77;
     padding-left: 40px;
   }
 }
